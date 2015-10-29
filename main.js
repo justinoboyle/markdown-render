@@ -15,9 +15,12 @@ httpGetAsync(url, function(data, status) {
     var rulesArr = [];
     var linesArr = [];
     var lines = data.split('\n');
+    //Directive code
+    var direciveListening = false;
     for (var i = 0; i < lines.length; i++) {
         var line = lines[i];
-        if (line.startsWith("[//]: # (mr@") && line.endsWith(")") && line.includes("=")) {
+        if(line.startsWith("[//]: # (mr@stoplisten)")) directiveListening = false;
+        if (directiveListening && line.startsWith("[//]: # (mr@") && line.endsWith(")") && line.includes("=")) {
             line = line.substring("[//]: # (mr@".length);
             line = line.substring(0, line.length - 1);
             rulesArr.push(new Rule(line.split("=")[0], line.substring(line.split("=")[0].length + 1)));
