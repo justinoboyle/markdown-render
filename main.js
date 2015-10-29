@@ -16,7 +16,7 @@ httpGetAsync(url, function(data, status) {
     var linesArr = [];
     var lines = data.split('\n');
     //Directive code
-    var direciveListening = false;
+    var directiveListening = false;
     for (var i = 0; i < lines.length; i++) {
         var line = lines[i];
         if(line.startsWith("[//]: # (mr@stoplisten)")) directiveListening = false;
