@@ -21,8 +21,8 @@ That's really easy too. It requires using something called a *directive*. `redir
 # Other markdown code
 ```
 
-### `redir`
-`redir` is probably more useful. It will change the content being displayed, but it will not update in the URL bar.
+### `redir-silently`
+`redir-silently` is probably more useful. It will change the content being displayed, but it will not update in the URL bar.
 
 **Markdown code**
 
